@@ -6,11 +6,12 @@ After=network.target
 Type=simple
 User=matt
 WorkingDirectory=/home/matt/PurePulse/Event-Transport-Protocol
-ExecStart=/usr/bin/npm run dev
+ExecStart=/usr/bin/npm run dev:web -- --port 3008 --host 0.0.0.0
 Restart=always
 RestartSec=10
 Environment=NODE_ENV=production
 Environment=PORT=3008
+Environment=VITE_PORT=3008
 
 [Install]
 WantedBy=multi-user.target
