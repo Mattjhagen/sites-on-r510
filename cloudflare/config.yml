@@ -8,7 +8,7 @@ ingress:
 
   # P3 Lending Protocol
   - hostname: p3lending.space
-    service: http://localhost:5173
+    service: http://localhost:5174
 
   # Morrow / Velour
   - hostname: velour.live
