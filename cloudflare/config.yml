@@ -1,5 +1,5 @@
 tunnel: purepulse-r510
-credentials-file: /home/matt/.cloudflared/tunnel-credentials.json
+credentials-file: /home/matt/.cloudflared/2c92961b-db35-4513-985c-6c91b5778e8c.json
 
 ingress:
   # Rooted Daily App
