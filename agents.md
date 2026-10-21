@@ -246,3 +246,17 @@ Legend:
 - 🔄 In Progress
 - ❌ Blocked/Issue
 - ⏸️ Paused
+
+### 2026-10-21 - ✅ PUREPULSE.ONE FIXED!
+- ⚠️ Issue: "Blocked request. This host is not allowed" error on purepulse.one
+- ✅ Solution: Added `allowedHosts: ['purepulse.one', 'new.purepulse.one', '.purepulse.one']` to vite.config.ts
+- ✅ Added `host: '0.0.0.0'` to server config in vite.config.ts
+- ✅ Restarted PurePulse Marketing dev server
+- ✅ **PUREPULSE.ONE NOW FULLY WORKING!**
+- ✅ Verified: Title shows "Elite Web Design & Digital Roster" (correct new site)
+- ✅ Verified: All links and assets loading correctly
+  - Vite client: HTTP 200
+  - main.tsx: HTTP 200
+  - favicon.svg: HTTP 200
+  - Google Fonts: Loading
+- 🎉 **Site live and accessible at https://purepulse.one**
