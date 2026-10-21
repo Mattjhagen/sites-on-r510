@@ -8,16 +8,16 @@ Setting up 11 sites on this server with Cloudflare tunnels
 ### 1. Rooted Daily - rootedapp.space
 - **Directory**: `/home/matt/PurePulse/Rooted-Daily-static-site`
 - **URL**: https://rootedapp.space/
-- **Status**: 🔄 Pending assessment
-- **Port**: TBD
-- **Notes**: 
+- **Status**: ✅ Running
+- **Port**: 3002
+- **Notes**: Static site using http-server 
 
 ### 2. P3 Lending Protocol - p3lending.space
 - **Directory**: `/home/matt/PurePulse/P3-Lending-Protocol`
 - **URL**: https://p3lending.space/
-- **Status**: 🔄 Pending assessment
-- **Port**: TBD
-- **Notes**: 
+- **Status**: ✅ Running
+- **Port**: 5173 (Frontend) + 5001 (Backend)
+- **Notes**: React + Vite frontend, Express backend 
 
 ### 3. Morrow - velour.live
 - **Directory**: `/home/matt/PurePulse/Morrow`
@@ -29,16 +29,16 @@ Setting up 11 sites on this server with Cloudflare tunnels
 ### 4. FuelShield - GitHub Pages
 - **Directory**: `/home/matt/PurePulse/FuelShield`
 - **URL**: https://mattjhagen.github.io/FuelShield/
-- **Status**: 🔄 Pending assessment
-- **Port**: N/A (GitHub Pages)
-- **Notes**: May need separate setup for GitHub Pages
+- **Status**: ✅ Running
+- **Port**: 3005
+- **Notes**: Static site using http-server, also available on GitHub Pages
 
 ### 5. Relay - relayapp.pro
 - **Directory**: `/home/matt/PurePulse/Relay`
 - **URL**: http://relayapp.pro/
-- **Status**: 🔄 Pending assessment
-- **Port**: TBD
-- **Notes**: 
+- **Status**: ✅ Running
+- **Port**: 3006
+- **Notes**: Static site using http-server 
 
 ### 6. North Star Recovery - cmameet.site
 - **Directory**: `/home/matt/PurePulse/NorthStarRecovery`
@@ -48,6 +48,46 @@ Setting up 11 sites on this server with Cloudflare tunnels
 - **Notes**: 
 
 ### 7. PacMac ACP - pacmacmobile.com
+- **Directory**: `/home/matt/PurePulse/PacMac-ACP`
+- **URL**: https://pacmacmobile.com/
+- **Status**: ✅ Running
+- **Port**: 3007
+- **Notes**: React + Vite application
+
+### 8. Event Transport Protocol - eventtransport.space
+- **Directory**: `/home/matt/PurePulse/Event-Transport-Protocol`
+- **URL**: https://eventtransport.space/
+- **Status**: ✅ Running (needs port update)
+- **Port**: 5173 (Web) + 8081 (API) - Conflicts with P3 Lending
+- **Notes**: TypeScript + Vite + Express backend, needs port reconfiguration
+
+### 9. PurePulse Marketing (Main Site) - purepulse.one
+- **Directory**: `/home/matt/PurePulse/PurePulse-Marketing`
+- **URL**: https://purepulse.one
+- **Status**: ✅ Running
+- **Port**: 3000
+- **Notes**: React + Vite marketing site
+
+### 3. Morrow - velour.live
+- **Directory**: `/home/matt/PurePulse/Morrow`
+- **URL**: velour.live
+- **Status**: 🔄 Dependencies installed, not started
+- **Port**: 3009 (planned)
+- **Notes**: Vinext/Next.js-like framework, uses pnpm but installed with npm
+
+### 6. North Star Recovery - cmameet.site
+- **Directory**: `/home/matt/PurePulse/NorthStarRecovery`
+- **URL**: https://cmameet.site/
+- **Status**: 🔄 Not started
+- **Port**: 3010 (planned)
+- **Notes**: React Native app with website component
+
+### 10. FlowOS Project Aquarius - projectaquarius.space
+- **Directory**: `/home/matt/PurePulse/FlowOS-Project-Aquarius`
+- **URL**: http://projectaquarius.space/
+- **Status**: 🔄 Not started
+- **Port**: 3011 (planned)
+- **Notes**: Python-based application
 - **Directory**: `/home/matt/PurePulse/PacMac-ACP`
 - **URL**: https://pacmacmobile.com/
 - **Status**: 🔄 Pending assessment
@@ -151,6 +191,23 @@ Starting port: 3000 (will increment for each site)
   - Start services and test
   - Configure Cloudflare tunnel
   - Add DNS records for all domains
+
+### 2026-10-21 - Sites Testing & Launch
+- ✅ Successfully pushed initial config to GitHub
+- ✅ Started and tested 6 sites:
+  - Rooted Daily (3002) ✓
+  - FuelShield (3005) ✓
+  - Relay (3006) ✓
+  - PurePulse Marketing (3000) ✓
+  - PacMac ACP (3007) ✓
+  - P3 Lending Protocol (5173) ✓
+- ⚠️ Port conflict discovered: Event Transport Protocol also using 5173
+- 🔄 Remaining sites to configure:
+  - Morrow (dependencies installed)
+  - NorthStarRecovery
+  - FlowOS Project Aquarius
+  - Matty's SDR Blog (not found)
+- 🔄 Next: Fix port conflicts, configure Cloudflare tunnel, add DNS records
 
 ---
 Legend:
