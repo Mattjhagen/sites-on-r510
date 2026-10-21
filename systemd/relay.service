@@ -1,0 +1,16 @@
+[Unit]
+Description=Relay Static Site
+After=network.target
+
+[Service]
+Type=simple
+User=matt
+WorkingDirectory=/home/matt/PurePulse/Relay
+ExecStart=/usr/bin/npx http-server . -p 3006 -c-1
+Restart=always
+RestartSec=10
+Environment=NODE_ENV=production
+Environment=PORT=3006
+
+[Install]
+WantedBy=multi-user.target

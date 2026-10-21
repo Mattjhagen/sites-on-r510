@@ -1,0 +1,160 @@
+# PurePulse Sites Deployment - Agent Work Log
+
+## Overview
+Setting up 11 sites on this server with Cloudflare tunnels
+
+## Sites to Deploy
+
+### 1. Rooted Daily - rootedapp.space
+- **Directory**: `/home/matt/PurePulse/Rooted-Daily-static-site`
+- **URL**: https://rootedapp.space/
+- **Status**: 🔄 Pending assessment
+- **Port**: TBD
+- **Notes**: 
+
+### 2. P3 Lending Protocol - p3lending.space
+- **Directory**: `/home/matt/PurePulse/P3-Lending-Protocol`
+- **URL**: https://p3lending.space/
+- **Status**: 🔄 Pending assessment
+- **Port**: TBD
+- **Notes**: 
+
+### 3. Morrow - velour.live
+- **Directory**: `/home/matt/PurePulse/Morrow`
+- **URL**: velour.live
+- **Status**: 🔄 Pending assessment
+- **Port**: TBD
+- **Notes**: 
+
+### 4. FuelShield - GitHub Pages
+- **Directory**: `/home/matt/PurePulse/FuelShield`
+- **URL**: https://mattjhagen.github.io/FuelShield/
+- **Status**: 🔄 Pending assessment
+- **Port**: N/A (GitHub Pages)
+- **Notes**: May need separate setup for GitHub Pages
+
+### 5. Relay - relayapp.pro
+- **Directory**: `/home/matt/PurePulse/Relay`
+- **URL**: http://relayapp.pro/
+- **Status**: 🔄 Pending assessment
+- **Port**: TBD
+- **Notes**: 
+
+### 6. North Star Recovery - cmameet.site
+- **Directory**: `/home/matt/PurePulse/NorthStarRecovery`
+- **URL**: https://cmameet.site/
+- **Status**: 🔄 Pending assessment
+- **Port**: TBD
+- **Notes**: 
+
+### 7. PacMac ACP - pacmacmobile.com
+- **Directory**: `/home/matt/PurePulse/PacMac-ACP`
+- **URL**: https://pacmacmobile.com/
+- **Status**: 🔄 Pending assessment
+- **Port**: TBD
+- **Notes**: 
+
+### 8. FlowOS Project Aquarius - projectaquarius.space
+- **Directory**: `/home/matt/PurePulse/FlowOS-Project-Aquarius`
+- **URL**: http://projectaquarius.space/
+- **Status**: 🔄 Pending assessment
+- **Port**: TBD
+- **Notes**: 
+
+### 9. Event Transport Protocol - eventtransport.space
+- **Directory**: `/home/matt/PurePulse/Event-Transport-Protocol`
+- **URL**: https://eventtransport.space/
+- **Status**: 🔄 Pending assessment
+- **Port**: TBD
+- **Notes**: 
+
+### 10. PurePulse Marketing (Main Site) - purepulse.one
+- **Directory**: `/home/matt/PurePulse/PurePulse-Marketing`
+- **URL**: https://purepulse.one
+- **Status**: 🔄 Pending assessment
+- **Port**: TBD
+- **Notes**: Main site
+
+### 11. Matty's SDR Blog - mattjhagen.xyz
+- **Directory**: Not found locally yet
+- **URL**: https://mattjhagen.xyz
+- **Status**: ❌ Directory not found
+- **Port**: TBD
+- **Notes**: Need to check if repo exists elsewhere
+
+## Infrastructure Setup
+
+### Cloudflare Tunnel Configuration
+- **Status**: 🔄 Not started
+- **Tunnel Name**: TBD
+- **Notes**: Will configure after sites are running
+
+### Port Allocation
+Starting port: 3000 (will increment for each site)
+
+## Tech Stack Assessment
+
+### Static Sites (http-server)
+1. **Rooted-Daily** - Port 3002 (configured)
+2. **FuelShield** - Port 3005 (configured)
+3. **Relay** - Port 3006 (needs setup)
+
+### React/Vite Apps
+4. **PurePulse-Marketing** - Port 3000 (Vite dev)
+5. **PacMac-ACP** - Port 3007 (Vite)
+6. **P3-Lending-Protocol** - Port 5173 (Vite dev) + Backend on 5001
+7. **Event-Transport-Protocol** - Port 3008 (needs build) + Backend
+
+### Complex Apps
+8. **Morrow** - Port 3009 (Vinext/Next.js-like, uses pnpm)
+9. **NorthStarRecovery** - Port 3010 (React Native + Website)
+10. **FlowOS-Project-Aquarius** - Port 3011 (Python Flask/GUI app)
+
+### Missing
+11. **Matty's SDR Blog** - Not found locally
+
+## Infrastructure Status
+
+- ✅ Node.js v22.23.4 installed
+- ✅ npm 10.9.9 installed
+- ✅ cloudflared 2026.10.1 installed
+- ✅ systemd 255 available
+- ❌ nginx not installed (needs sudo)
+- 🔄 Alternative: Direct cloudflared tunnels to each service
+
+## Progress Log
+
+### 2026-10-21 - Initial Setup
+- Created agents.md tracking file
+- Identified 11 sites from URLs file
+- Completed site assessment phase
+- Tech stack analyzed for all projects
+- Cloudflared available, will use direct tunneling approach
+
+### 2026-10-21 - Infrastructure Setup
+- ✅ Created sites-on-r510 GitHub repository structure
+- ✅ Created systemd service files for all sites (7 services)
+- ✅ Created cloudflare tunnel configuration (config.yml)
+- ✅ Created deployment scripts:
+  - install-services.sh (installs systemd services)
+  - start-all-sites.sh (starts all services)
+  - setup-cloudflare-tunnel.sh (configures cloudflare tunnel)
+- ✅ Created comprehensive README.md with documentation
+- ✅ Installed dependencies for:
+  - Rooted-Daily-static-site ✓
+  - FuelShield ✓
+  - PurePulse-Marketing ✓ (with --legacy-peer-deps)
+  - PacMac-ACP ✓
+- 🔄 Next steps:
+  - Push to GitHub repository
+  - Install remaining site dependencies
+  - Start services and test
+  - Configure Cloudflare tunnel
+  - Add DNS records for all domains
+
+---
+Legend:
+- ✅ Complete
+- 🔄 In Progress
+- ❌ Blocked/Issue
+- ⏸️ Paused

@@ -1,0 +1,46 @@
+tunnel: purepulse-r510
+credentials-file: /home/matt/.cloudflared/tunnel-credentials.json
+
+ingress:
+  # Rooted Daily App
+  - hostname: rootedapp.space
+    service: http://localhost:3002
+
+  # P3 Lending Protocol
+  - hostname: p3lending.space
+    service: http://localhost:5173
+
+  # Morrow / Velour
+  - hostname: velour.live
+    service: http://localhost:3009
+
+  # Relay App
+  - hostname: relayapp.pro
+    service: http://localhost:3006
+
+  # PacMac Mobile
+  - hostname: pacmacmobile.com
+    service: http://localhost:3007
+
+  # Project Aquarius
+  - hostname: projectaquarius.space
+    service: http://localhost:3011
+
+  # North Star Recovery
+  - hostname: cmameet.site
+    service: http://localhost:3010
+
+  # Event Transport Protocol
+  - hostname: eventtransport.space
+    service: http://localhost:3008
+
+  # PurePulse Marketing (Main)
+  - hostname: purepulse.one
+    service: http://localhost:3000
+
+  # Matty's SDR Blog
+  - hostname: mattjhagen.xyz
+    service: http://localhost:3012
+
+  # Catch-all rule
+  - service: http_status:404
